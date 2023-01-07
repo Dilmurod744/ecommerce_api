@@ -1,0 +1,14 @@
+ecommerce api
+
+login, register
+
+shop
+product
+category
+
+
+filter (shop, category, price)
+search (name)
+
+testing
+postgres (faker + 100tadan)
