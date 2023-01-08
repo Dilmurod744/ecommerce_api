@@ -3,7 +3,7 @@ from uuid import uuid4
 from django.contrib.auth.models import User
 from django.db import models
 from django.db.models import Model, DateTimeField, CharField, SlugField, FloatField, TextField, ForeignKey, SET_NULL, \
-    UUIDField, CASCADE
+    UUIDField, CASCADE, ImageField
 from django.utils.text import slugify
 
 
@@ -63,4 +63,9 @@ class Product(BaseModel):
         verbose_name_plural = 'Product'
 
 
+class ProductImage(BaseModel):
+    image = ImageField(upload_to='images/')
+    product = ForeignKey(Product, CASCADE, 'product_image')
 
+    class Meta:
+        db_table = "images"
